@@ -26,7 +26,7 @@ class UrlLoader {
       isNetErr = !!err
     } catch (e) {
       // 参数模块抛出的错误（也有可能是脚本错误）
-      console.assert(e instanceof ParamError, e)
+      // console.assert(e instanceof ParamError, e)
       err = e
     }
 
