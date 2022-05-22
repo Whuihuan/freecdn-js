@@ -112,7 +112,7 @@ namespace Sw {
   }
 
   async function main() {
-    mFreeCDN = new FreeCDN('freecdn-manifest.txt')
+    mFreeCDN = new FreeCDN('freecdn-internal/freecdn-manifest.txt')
 
     const isSharedMode = !!(GLOBAL as any).FREECDN_SHARED_MODE
 

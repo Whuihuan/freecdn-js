@@ -10,7 +10,7 @@ const DEFAULT_PARAMS = `
  open_timeout=10s
  valid_status=200
 `
-const DEFAULT_MANIFEST_PATH = '/freecdn-manifest.txt'
+const DEFAULT_MANIFEST_PATH = '/freecdn-internal/freecdn-manifest.txt'
 const MY_URL = location.href
 const MY_HOST = location.host
 const MY_ORIGIN = location.origin

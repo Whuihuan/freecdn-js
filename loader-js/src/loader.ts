@@ -103,19 +103,19 @@ declare let Q: any[]
       return
     }
 
-    try {
-      // 如果 sw 的响应头存在 CSP，可能无法 eval
-      globalEval('')
+    // try {
+    //   // 如果 sw 的响应头存在 CSP，可能无法 eval
+    //   globalEval('')
 
-      // 同时从多个公共 CDN 加载 main-js，哪个先完成执行哪个，提高稳定性
-      CDN_URLS_PLACEHOLDER.map(loadMainJs)
+    //   // 同时从多个公共 CDN 加载 main-js，哪个先完成执行哪个，提高稳定性
+    //   CDN_URLS_PLACEHOLDER.map(loadMainJs)
 
-      // 如果公共 CDN 不可用，从当前站点加载 main-js
-      setTimeout(loadMainJs, DELAY_PLACEHOLDER, 'freecdn-internal/' + VER + '/freecdn-main.min.js')
-    } catch {
+    //   // 如果公共 CDN 不可用，从当前站点加载 main-js
+    //   setTimeout(loadMainJs, DELAY_PLACEHOLDER, 'freecdn-internal/' + VER + '/freecdn-main.min.js')
+    // } catch {
       // 无法 eval 的情况下，使用 importScripts 加载 main-js
       // 由于 importScripts 不支持 hash 校验，因此出于安全性，只从当前站点加载
       importScripts('freecdn-internal/' + VER + '/freecdn-main.min.js')
-    }
+    // }
   }
 })()
