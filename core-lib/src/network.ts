@@ -92,7 +92,8 @@ namespace Network {
       res = await NATIVE_FETCH(req)
     } catch (err: any) {
       parseFetchError(err, req, hostInfo, t0)
-      throw err
+      // throw err
+      res =  new Response();
     } finally {
       hostInfo.pending--
     }

@@ -39,6 +39,10 @@ declare let Q: any[]
 
     const s = document.createElement('script')
     s['e'] = err
+    if(err)
+    {
+      console.log(err);
+    }
     document.documentElement.appendChild(s).src = FAIL_JS
   }
 

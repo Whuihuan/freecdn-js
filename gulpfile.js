@@ -62,7 +62,7 @@ gulp.task('minify-main-js', gulp.series('compile-main-js', () => {
     .pipe(terser(opt))
     .pipe(rename('freecdn-main.min.js'))
     .pipe(sourcemaps.write('.', {
-      sourceMappingURLPrefix: `https://unpkg.com/freecdn-js@${VER}/dist`
+      // sourceMappingURLPrefix: `https://unpkg.com/freecdn-js@${VER}/dist`
     }))
     .pipe(gulp.dest('dist'))
 }))
