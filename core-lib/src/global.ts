@@ -24,6 +24,7 @@ const enum LEN {
   SHA256_BIN = 32,
   SHA256_B64 = 44,
   PUBKEY_B64 = 124,
+  MAX_QUEUE = 1024 * 1024 * 50,
 }
 
 type params_t = ReadonlyMap<string, string>
@@ -34,7 +35,7 @@ const EMPTY_BUF = new Uint8Array(0)
 const CRYPTO = crypto.subtle
 
 
-let gInited: boolean | PromiseX
+let gInited: true | PromiseX
 
 async function globalInit() {
   if (gInited) {
